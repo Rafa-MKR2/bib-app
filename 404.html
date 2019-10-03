@@ -1,0 +1,37 @@
+<html>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<style>
+    body {
+        background-image: url('./img/Erro404.jpg');
+        background-position: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    
+    .center {
+        margin-top: auto;
+        margin-bottom: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<body>
+    <div class="d-flex justify-content-center h-5 w-10 center">
+        <button type="button" onclick="voltar()" class="btn btn-light btn-lg">Recarregar!</button>
+    </div>
+
+    <script>
+        function voltar() {
+            return window.location.assign("./index.html")
+        }
+    </script>
+
+</body>
+
+</html>

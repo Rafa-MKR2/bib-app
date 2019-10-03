@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: rgb(255, 255, 255)
+        }
+        
+        #loading {
+            background-image: url('./splashscreen/load.gif');
+            background-position: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto auto;
+            z-index: 1000;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #iframe {
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body onload='loadpage()'>
+
+    <div id="loading"></div>
+    <div id="iframe">
+    </div>
+    <script>
+        function loadpage() {
+            setTimeout(function() {
+                return document.querySelector("#loading").style.display = "none"
+
+            }, 3000)
+        }
+        (function() {
+
+            var online = window.navigator.onLine;
+            var search = JSON.parse(window.localStorage.getItem("search"));
+            document.querySelector("#iframe").innerHTML = `
+                <iframe src="https://bastosjuntas.bibipecas.com.br/search/${search.placa}/${search.produto}" frameborder="0" height="100%" width="100%"></iframe> `;
+
+
+            if (!online) window.location.assign('./404.html')
+
+        })()
+    </script>
+</body>
+
+</html>
