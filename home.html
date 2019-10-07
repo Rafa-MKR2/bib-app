@@ -6,7 +6,7 @@
         * {
             margin: 0;
             padding: 0;
-            background: rgb(255, 255, 255)
+            background: #fbfbfb;
         }
         
         #loading {
@@ -45,7 +45,7 @@
             var online = window.navigator.onLine;
             var search = JSON.parse(window.localStorage.getItem("search"));
             document.querySelector("#iframe").innerHTML = `
-                <iframe src="https://bastosjuntas.bibipecas.com.br/search/${search.placa}/${search.produto}" frameborder="0" height="100%" width="100%"></iframe> `;
+                <iframe src="https://app.bibipecas.com.br/search/${search.placa}/${search.produto}" frameborder="0" height="100%" width="100%"></iframe> `;
 
 
             if (!online) window.location.assign('./404.html')
