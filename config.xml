@@ -14,6 +14,17 @@
 <platform name="android" >
   <preference name="orientation" value="portrait" />
 </platform>
+
+
+<platform name="ios">
+  <allow-intent href="itms:*" />
+  <allow-intent href="itms-apps:*" />
+  <preference name="PaginationBreakingMode" value="page"/>
+  <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
+
+</platform>
+
+
 <preference name="android-minSdkVersion"  value="16" />
 <preference name="android-targetSdkVersion"  value="26" />
 
