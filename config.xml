@@ -15,6 +15,12 @@
   <preference name="orientation" value="portrait" />
 </platform>
 
+
+<preference name="android-minSdkVersion" value="26" />
+  <preference name="android-maxSdkVersion" value="26" />
+  <preference name="android-targetSdkVersion" value="26" />
+  <preference name="android-installLocation" value="auto" />
+
     <name>Bibi Peças</name>
     <description>
     Aplicativo desenvolvido por www.bibipecas.com.br
