@@ -1,10 +1,10 @@
-<?xml version="1.0.1" encoding="UTF-8" ?>
+<?xml version="1.0.2" encoding="UTF-8" ?>
 <widget xmlns="http://www.w3.org/ns/widgets"
- xmlns:gap="http://phonegap.com/ns/1.0.2" version="1.0.1" id="Bibipecas">
+ xmlns:gap="http://phonegap.com/ns/1.0.2" version="1.0.2" id="Bibipecas">
  <access origin="*" /><allow-navigation href="*"/>
  <plugin name="cordova-plugin-whitelist" source="npm" />
 
-<allow-navigation href="https://bastosjuntas.bibipecas.com.br/*" />
+<allow-navigation href="https://app.bibipecas.com.br/*" />
 <access origin="*" />
 
   <splash src="splashscreen/load.gif" width="320" height="480"/>
