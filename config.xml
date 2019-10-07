@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns="http://www.w3.org/ns/widgets"
  xmlns:gap="http://phonegap.com/ns/1.0" version="1.0.0" id="Bibipecas">
- <access origin="*" /><allow-navigation href="*"/>
+ <access origin="*" />
+ <allow-navigation href="*"/>
  <plugin name="cordova-plugin-whitelist" source="npm" />
 
 <allow-navigation href="https://bastosjuntas.bibipecas.com.br/*" />
-<access origin="*" />
 
   <splash src="splashscreen/load.gif" width="320" height="480"/>
   
+ <!-- all platforms -->
+  <preference name="phonegap-version" value="cli-6.0.0" />
+  <preference name="fullscreen" value="true" />
+<platform name="android" >
+  <preference name="orientation" value="portrait" />
+</platform>
 
     <name>Bibi Peças</name>
     <description>
