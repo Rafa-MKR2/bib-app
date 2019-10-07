@@ -10,7 +10,6 @@
   <splash src="splashscreen/load.gif" width="320" height="480"/>
   
  <!-- all platforms -->
-  <preference name="phonegap-version" value="cli-6.0.0" />
   <preference name="fullscreen" value="true" />
 <platform name="android" >
   <preference name="orientation" value="portrait" />
