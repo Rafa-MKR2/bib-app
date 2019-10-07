@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns="http://www.w3.org/ns/widgets"
- xmlns:gap="http://phonegap.com/ns/1.0" version="1.0.4" id="Bibipecas">
+ xmlns:gap="http://phonegap.com/ns/1.0" version="1.0.5" id="Bibipecas">
  <access origin="*" />
  <allow-navigation href="*"/>
  <plugin name="cordova-plugin-whitelist" source="npm" />
@@ -14,9 +14,11 @@
 <platform name="android" >
   <preference name="orientation" value="portrait" />
 </platform>
+<preference name="android-minSdkVersion"  value="16" />
+<preference name="android-targetSdkVersion"  value="26" />
 
 
-<preference name="android-minSdkVersion" value="28" />
+
  <preference name="android-installLocation" value="auto" />
 
     <name>Bibi Peças</name>
