@@ -5,7 +5,8 @@
  <allow-navigation href="*"/>
  <plugin name="cordova-plugin-whitelist" source="npm" />
 
-<allow-navigation href="https://bastosjuntas.bibipecas.com.br/*" />
+<allow-navigation href="https://app.bibipecas.com.br/*" />
+<allow-navigation href="*" />
 
   <splash src="splashscreen/load.gif" width="320" height="480"/>
   
@@ -17,11 +18,7 @@
 
 
 <platform name="ios">
-  <allow-intent href="itms:*" />
-  <allow-intent href="itms-apps:*" />
-  <preference name="PaginationBreakingMode" value="page"/>
-  <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
-
+  <preference name="orientation" value="portrait" />
 </platform>
 
 
