@@ -8,12 +8,17 @@
 <allow-navigation href="https://app.bibipecas.com.br/*" />
 <allow-navigation href="*" />
 
-  <splash src="splashscreen/load.gif" width="320" height="480"/>
   
  <!-- all platforms -->
   <preference name="fullscreen" value="true" />
+
+  
 <platform name="android" >
   <preference name="orientation" value="portrait" />
+  <splash src="splashscreen/load.gif" width="320" height="480"/>
+
+  <preference name="android-minSdkVersion"  value="16" />
+  <preference name="android-targetSdkVersion"  value="26" />
 </platform>
 
 
@@ -22,12 +27,9 @@
 </platform>
 
 
-<preference name="android-minSdkVersion"  value="16" />
-<preference name="android-targetSdkVersion"  value="26" />
 
 
 
- <preference name="android-installLocation" value="auto" />
 
     <name>Bibi Peças</name>
     <description>
