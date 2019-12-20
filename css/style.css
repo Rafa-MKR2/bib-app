@@ -1,5 +1,6 @@
-body {
-    background-color: #6398ff
+body .index {
+    background-color: #6398ff;
+    height: 100%;
 }
 
 .baixar {
@@ -29,6 +30,14 @@ body {
         transition: none
     }
 }
+
+input {
+    text-transform: uppercase;
+
+}
+
+
+
 
 .form-control::-ms-expand {
     background-color: transparent;
@@ -71,8 +80,8 @@ body {
 }
 
 .img {
-    width: 120%;
-    height: 120%
+    width: 100%;
+    height: 100%
 }
 
 .center {
@@ -95,11 +104,13 @@ body {
 
 .placeholdercor2::placeholder {
     color: #6398ff;
+    font-size: 25px;
+
     opacity: 1
 }
 
 .placeholdercor2 {
-    width: 360px;
+    width: 90%;
     margin: auto
 }
 

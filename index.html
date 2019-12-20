@@ -1,68 +1,143 @@
-<!doctype html>
-<html lang="pt br">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script>
+      setInterval(function(){
+       if(!navigator.onLine) window.location.assign('./404.html');
 
-    <title>BIBIPECAS</title>
-    <script>
-        var online = window.navigator.onLine;
+      },500)
 
-        if (!online) window.location.assign("./404.html");
-    </script>
+</script>
+   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+   <link rel="stylesheet" href="./css/onsen-css-components.min.css">
+
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Bibi Peças</title>
+
+    <script src="./js/onsenui.min.js"></script>
+
+    <style>
+    
+    #Splashscreen {
+            margin: 0;
+            padding: 0;
+            background: #fbfbfb;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #loading {
+            background-image: url('./img/load.gif');
+            background-position: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto auto;
+            z-index: 1000;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #iframe {
+            position: relative;
+        }
+  
+    </style>
 
 </head>
 
 <body>
-    <div class="text-center">
-        <a class="navbar-brand ml-auto baixarimg center" href="index.html">
-            <img class="img text-center" src="img/logo.png" alt=""></a>
-        <h2 class="fonte cor">Peça pela placa</h2>
 
-        <div class="baixar">
-            <form onsubmit="buscar(event)">
-                <div>
-                    <div>
-                        <input type="text" style="text-transform: uppercase" class="cordofundo form-control placeholdercor1  placa text-center  fontetamanho1" placeholder="XXX-0000">
-                        <input type="text" style="text-transform: uppercase" class="form-control placeholdercor2 produto text-center fontetamanho2" placeholder="Produto"><br>
-                        <input type="submit" class="btn btn-cor cor fontebotao " value="BUSCAR">
+    <ons-navigator swipeable id="myNavigator" page="index.html"></ons-navigator>
+
+    <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+                    <div class="alert-dialog-title">Oops!</div>
+                    <div class="alert-dialog-content">
+                     <p> Placa no formato inválido!</p>
                     </div>
-                </div>
-            </form>
+                    <div class="alert-dialog-footer">
+                            <ons-alert-dialog-button id="btn-close">OK</ons-alert-dialog-button>
+                     </div>
+    </ons-alert-dialog>
 
+    <template id="index.html">
+      <ons-page  id="index">
+ 
+           <div class="index">
+
+                <div class="text-center">
+                        <a class="navbar-brand ml-auto baixarimg center" href="index.html">
+                            <img class="img text-center" src="img/logo.png" alt=""></a>
+                        <h2 class="fonte cor">Peça pela placa</h2>
+                
+                        <div class="baixar">
+                            <form >
+                           
+                             <input type="text" id="placa"   class="form-control placeholdercor2  text-center fontetamanho2" placeholder="Placa do veículo"><br>
+                             <input type="text" id="produto"  class="form-control placeholdercor2  text-center fontetamanho2" placeholder="Produto"><br>
+                            <ons-button id="submit"  class="btn btn-cor cor fontebotao ">BUSCAR</ons-button>
+                                
+                            </form>
+                
+                        </div>
+                    </div>
+                
+                
+                
+                    <footer class="text-center baixarfooter">
+                        <a href="https://api.whatsapp.com/send?phone=5585992149283"><i class="fa fa-whatsapp" style="font-size:30px;color:white; padding-right:10px;"></i></a>
+                        <a href="https://www.instagram.com/bibipecas/"><i class="fa fa-instagram" style="font-size:30px;color:white; padding-right:10px;"></i></a>
+                        <a href="https://pt-br.facebook.com/bibipecas/"><i class="fa fa-facebook-square" style=" font-size:30px;color:white; "></i></a><br>
+                        <br>
+                        <a class="cor" href="https://www.bibipecas.com.br">www.bibipecas.com.br</a>
+                    </footer>
+    
+           </div>         
+      
+      </ons-page>
+    </template>
+
+    <template id="home.html">
+      <ons-page id="home">
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+          <div class="center">Bibi Peças</div>
+        </ons-toolbar>
+        <div id="Splashscreen">
+                <div id="loading"></div>
+
+                <iframe src="https://app.bibipecas.com.br/search/" frameborder="0"  height="100%" width="100%"></iframe>
+            <script>
+             document.querySelector("iframe").src = `https://app.bibipecas.com.br/search/
+             ${document.querySelector("#placa").value}/${document.querySelector("#produto").value}`;
+
+    
+             document.querySelector("iframe").addEventListener('load', function(event){
+                        document.querySelector("#loading").style.display = 'none';
+                      
+             })
+           
+            </script>
         </div>
-    </div>
+        
+       
+      </ons-page>
+    </template>
 
 
+    <script src="js/Bibi.js "></script>
 
-    <footer class="text-center baixarfooter">
-        <a href="https://api.whatsapp.com/send?phone=5585992149283"><i class="fa fa-whatsapp" style="font-size:30px;color:white; padding-right:10px;"></i></a>
-        <a href="https://www.instagram.com/bibipecas/"><i class="fa fa-instagram" style="font-size:30px;color:white; padding-right:10px;"></i></a>
-        <a href="https://pt-br.facebook.com/bibipecas/"><i class="fa fa-facebook-square" style=" font-size:30px;color:white; "></i></a><br>
-        <a class="cor" href="https://www.bibipecas.com.br">www.bibipecas.com.br</a>
-    </footer>
-
-
-
-
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/css.css">
     <script>
-        function buscar(event) {
-            event.preventDefault()
-            var placa = document.querySelector(".placa").value;
-            var produto = document.querySelector(".produto").value;
 
-            if (!placa && !produto) return;
-            window.localStorage.setItem('search', JSON.stringify({
-                placa,
-                produto
-            }))
+     
+        window.addEventListener("load", function () {
+            var bibi = new Bibi("#placa", "#produto");
 
-            window.location.assign("./home.html")
-        }
+        })
+       
     </script>
 </body>
 
